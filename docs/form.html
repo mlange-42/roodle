@@ -12,16 +12,17 @@
   form.addEventListener('submit', e => {
     e.preventDefault()
     var data = new FormData(form)
+    const values = JSON.stringify(Object.fromEntries(data.entries()));
+    console.log(`Sending: ${values}`)  
+    
     fetch(scriptURL, 
         { 
-            method: 'GET', 
-            data: data,
-            headers: {
-                "Content-Type": "application/json",
-            },
+            method: 'POST', 
+            body: values
         }
       )
       .then(resp => {
+        console.log(`Response: ${JSON.stringify(resp)}`)  
         if (resp.status === 200) {
             return resp.json()
         } else {
@@ -30,13 +31,13 @@
         }
         })
         .then(dataJson => {
-            data = JSON.parse(dataJson)
+            data = dataJson
+            console.log(`Received: ${JSON.stringify(data)}`) 
         })
         .catch(err => {
             if (err === "server") return
             console.log(err)
         })
-
-       console.log(`Received: ${data}`)  
+ 
   })
 </script>
