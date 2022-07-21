@@ -1,0 +1,199 @@
+@CHARSET "ISO-8859-1";
+body * {
+	font-family: Arial !important;
+}
+
+[draggable] {
+  -moz-user-select: none;
+  -khtml-user-select: none;
+  -webkit-user-select: none;
+  user-select: none;
+  /* Required to make elements draggable in old WebKit */
+  -khtml-user-drag: element;
+  -webkit-user-drag: element;
+}
+
+.button {
+    background-color: #4CAF50; /* Green */
+    color: white;
+    padding: 15px 32px;
+ 	width: 162px;
+    text-align: center;
+    text-decoration: none;
+    display: inline-block;
+    font-size: 16px;
+    cursor: pointer;
+    border: 2px solid black;
+    border-radius: 10px;
+    font-size: 140%;
+ }
+.button:disabled,
+.button[disabled]{
+	background-color: #8CEF90; /* Green */
+    border: 2px solid grey;
+    color: grey;
+}
+
+#instruction {
+	text-align: justify;
+	border: 2px solid black;
+  	border-radius: 16px;
+	width: 900px;
+	padding: 10px 14px;
+}
+#drag-container {
+display: table-cell;	border: 2px solid black;
+  	border-radius: 16px;
+	width: 900px;
+	padding: 6px 14px;
+}
+#outer-container {
+	width: 1110px;
+}
+#high-low-container {
+	position:relative;
+	display: table-cell;
+	width: 61px;
+	min-width: 60px;
+	height: 100%;
+	padding: 6px 14px;
+}
+#high-low-inner {
+	display: -webkit-box;      /* OLD - iOS 6-, Safari 3.1-6 */
+    display: -moz-box;         /* OLD - Firefox 19- (buggy but mostly works) */
+    display: -ms-flexbox;      /* TWEENER - IE 10 */
+    display: -webkit-flex;     /* NEW - Chrome */
+    display: flex;             /* NEW, Spec - Opera 12.1, Firefox 20+ */
+	flex-direction: column;
+	justify-content: space-between;
+	position:absolute;
+	left: 5px;
+	right: 5px;
+	top: 5px;
+	bottom: 5px;
+}
+#arrow-label-top {
+	display: -webkit-box;      /* OLD - iOS 6-, Safari 3.1-6 */
+	display: -moz-box;         /* OLD - Firefox 19- (buggy but mostly works) */
+	display: -ms-flexbox;      /* TWEENER - IE 10 */
+	display: -webkit-flex;     /* NEW - Chrome */
+	display: flex;             /* NEW, Spec - Opera 12.1, Firefox 20+ */
+	flex-grow: 0;
+	width: 100%;
+	//border: 1px solid black;
+}
+#arrow-label-bottom {
+	display: -webkit-box;      /* OLD - iOS 6-, Safari 3.1-6 */
+	display: -moz-box;         /* OLD - Firefox 19- (buggy but mostly works) */
+	display: -ms-flexbox;      /* TWEENER - IE 10 */
+	display: -webkit-flex;     /* NEW - Chrome */
+	display: flex;             /* NEW, Spec - Opera 12.1, Firefox 20+ */
+	flex-grow: 0;
+	width: 100%;
+	//border: 1px solid black;
+}
+#arrow-image {
+	display: -webkit-box;      /* OLD - iOS 6-, Safari 3.1-6 */
+	display: -moz-box;         /* OLD - Firefox 19- (buggy but mostly works) */
+	display: -ms-flexbox;      /* TWEENER - IE 10 */
+	display: -webkit-flex;     /* NEW - Chrome */
+	display: flex;             /* NEW, Spec - Opera 12.1, Firefox 20+ */
+	flex-grow: 1;
+	flex-shrink: 1;
+	max-width: 60%;
+	padding: 5px 0px;
+}
+.ie-high-low-label {
+	padding: 5px 0px;
+}
+
+
+.outer-box {
+	display: -webkit-box;      /* OLD - iOS 6-, Safari 3.1-6 */
+	display: -moz-box;         /* OLD - Firefox 19- (buggy but mostly works) */
+	display: -ms-flexbox;      /* TWEENER - IE 10 */
+	display: -webkit-flex;     /* NEW - Chrome */
+	display: flex;             /* NEW, Spec - Opera 12.1, Firefox 20+ */
+	padding: 0px;
+	min-height: 12px;
+  	border-radius: 10px;
+}
+.inner-box {
+    display: -webkit-box;      /* OLD - iOS 6-, Safari 3.1-6 */
+    display: -moz-box;         /* OLD - Firefox 19- (buggy but mostly works) */
+    display: -ms-flexbox;      /* TWEENER - IE 10 */
+    display: -webkit-flex;     /* NEW - Chrome */
+    display: flex;             /* NEW, Spec - Opera 12.1, Firefox 20+ */
+    flex: 0 1 auto;
+    -ms-flex: 0 1 auto;
+	align-items: center;
+    background-color: #ddd;
+    color: black;
+	width: 100%;
+	border: 2px solid black;
+  	border-radius: 10px;
+	margin: 4px;
+	padding: 5px;
+  	cursor: move;
+	min-height: 30px;
+}
+.inner-box.not-moved {
+    background-color: #edd;
+	border: 2px solid #d00;
+	color: #d00;
+}
+.inner-box.dragElem {
+  opacity: 0.4;
+}
+.outer-box.over {
+    background-color: #ccf;
+}
+
+.tooltip {
+    position: relative;
+}
+.tooltip .tooltiptext {
+    visibility: hidden;
+    width: 340px;
+    background-color: white;
+    color: #000;
+    text-align: left;
+    padding: 5px 5px;
+    border-radius: 10px;
+	border: 2px solid black;
+    /* Position the tooltip text - see examples below! */
+    position: absolute;
+    z-index: 1;
+    top: 120%;
+    left: 50%;
+    margin-left: -180px;
+    font-size: 16px;
+}
+.no-pointer {
+	pointer-events: none;
+}
+/* Show the tooltip text when you mouse over the tooltip container */
+.tooltip:hover:not(:active) .tooltiptext {
+    visibility: visible;
+  	transition-delay: 500ms;
+}
+.alert {
+	display: inline-block;
+	border: 2px solid red;
+	padding: 15px;
+	margin: 10px;
+  	border-radius: 10px;
+  	font-size: 120%;
+}
+.alert-small {
+	display: inline-block;
+	border: 2px solid red;
+	padding: 10px;
+	margin: 10px;
+  	border-radius: 10px;
+}
+.fake-link {
+    color: blue;
+    text-decoration: underline;
+    cursor: pointer;
+}

@@ -11,11 +11,279 @@
 			     text-align:center;
 			}
 		</style>
+		<link rel="stylesheet" type="text/css" href="./questionnaire-style.css">
  	</head>
-<body>
+ <body>
 
-<h1>Test</h1>
 
-</body>
+ <br /><div><b>Welcome User!</b><br /></div><br /> <noscript>
+   <div class="alert">
+   Please enable JavaScript in your browser to make this page work properly!<br />
+   For help, see <a href="http://www.enable-javascript.com/" target="_blank">this page</a>.
+   </div>
+   <br/>
+</noscript>
+
+<script>
+
+function detectIE() {
+	  var ua = window.navigator.userAgent;
+	  var msie = ua.indexOf('MSIE ');
+	  if (msie > 0) {
+	    // IE 10 or older => return version number
+	    return parseInt(ua.substring(msie + 5, ua.indexOf('.', msie)), 10);
+	  }
+	  var trident = ua.indexOf('Trident/');
+	  if (trident > 0) {
+	    // IE 11 => return version number
+	    var rv = ua.indexOf('rv:');
+	    return parseInt(ua.substring(rv + 3, ua.indexOf('.', rv)), 10);
+	  }
+	  var edge = ua.indexOf('Edge/');
+	  if (edge > 0) {
+	    // Edge (IE 12+) => return version number
+	    return parseInt(ua.substring(edge + 5, ua.indexOf('.', edge)), 10);
+	  }
+	  // other browser
+	  return false;
+}
+var isIE = ( detectIE() !== false )
+
+if(isIE) {
+	document.write("<div class=\"alert-small\">Due to technical limitations of Internet Explorer, this page may display suboptimally.<br>You may consider to use another browser (recommended: Firefox, Chrome).</div><br/>")
+}
+</script>
+
+<div id="instruction" class="collapse in">
+<details open>
+<summary>Instructions<script> if(!isIE) { document.write(" (<span class=\"fake-link\">hide/show</span>)") } </script></summary>
+<p><br/>Please order the following hazard items vertically according to their animal welfare implications (pain, distress, suffering) considering also likelyhood and duration of exposure to the hazard.<br/>Practically, judge which hazard you want to spare the animal most and put that above. Repeat this evaluation for every hazard. In case you cannot decide, put the hazards on the same level.<br/><br/><ol><li>Hold the mouse over an item to see it's detailed description. Percentage and duration assume worst case scenarios.</li><li>Please arrange the following hazard items in vertical order, with items of higher severity in terms of animal welfare (i.e. pain, distress, suffering) above those of lower severity, by dragging them with the mouse.</li><li>Hazards with equal ranks can be placed on the same line (side by side).</li><li>While dragging, the drop position will be highlighted.</li></ol><br/><a href="./img/animation.gif" target="_blank">&#9658; Show me how!</a><br/><br/>In case of trouble please contact <a href="mailto:mail@roodle.com?Subject=Roodle ranking">mail@roodle.com</a></p>
+</details>
+</div>
+<br />
+
+<div id="outer-container">
+	<div id="high-low-container">
+		<div id="high-low-inner">
+			<div id="arrow-label-top"> High severity </div>
+			<img id="arrow-image" alt="&#9660;" src="./img/triangle-red.png">
+			<div id="arrow-label-bottom"> Low severity </div>
+		</div>
+	</div>
+	<div id="drag-container">
+		<div class="outer-box"></div>
+		<div class="outer-box">
+		<div class="inner-box tooltip not-moved" draggable="true"><header class="no-pointer">Hanging and compression of the legs</header><span class="tooltiptext"><big><b>Hanging and compression of the legs</b></big><br /><br /><b>Description of the hazard</b><br/>Being suspended upside-down by the legs and being conveyed and being subject to compression of the legs by metal bars.<br/><b>Percentage of birds exposed</b><br/>100%<br/><b>Duration (mm:ss) of exposure</b><br/>01:00</span></div><div class="inner-box tooltip not-moved" draggable="true"><header class="no-pointer">Decreasing air humidity</header><span class="tooltiptext"><big><b>Decreasing air humidity</b></big><br /><br /><b>Description of the hazard</b><br/>Exposure to an environment with progressive depletion of humidity.<br/><b>Percentage of birds exposed</b><br/>100%<br/><b>Duration (mm:ss) of exposure</b><br/>01:20</span></div><div class="inner-box tooltip not-moved" draggable="true"><header class="no-pointer">Unintended electric shock</header><span class="tooltiptext"><big><b>Unintended electric shock</b></big><br /><br /><b>Description of the hazard</b><br/>Being subject to a pre-stunning electric shock in any part of the body.<br/><b>Percentage of birds exposed</b><br/>25%<br/><b>Duration (mm:ss) of exposure</b><br/>00:01</span></div><div class="inner-box tooltip not-moved" draggable="true"><header class="no-pointer">Tipping / Tilting</header><span class="tooltiptext"><big><b>Tipping / Tilting</b></big><br /><br /><b>Description of the hazard</b><br/>Sudden fall in groups onto a moving conveyor.<br/><b>Percentage of birds exposed</b><br/>100%<br/><b>Duration (mm:ss) of exposure</b><br/>00:20</span></div><div class="inner-box tooltip not-moved" draggable="true"><header class="no-pointer">Removal of air</header><span class="tooltiptext"><big><b>Removal of air</b></big><br /><br /><b>Description of the hazard</b><br/>Exposure to an environment with progressive depletion of air.<br/><b>Percentage of birds exposed</b><br/>100%<br/><b>Duration (mm:ss) of exposure</b><br/>01:20</span></div><div class="inner-box tooltip not-moved" draggable="true"><header class="no-pointer">Noise</header><span class="tooltiptext"><big><b>Noise</b></big><br /><br /><b>Description of the hazard</b><br/>Being exposed to a sudden unexpected sound.<br/><b>Percentage of birds exposed</b><br/>100%<br/><b>Duration (mm:ss) of exposure</b><br/>01:18</span></div><div class="inner-box tooltip not-moved" draggable="true"><header class="no-pointer">Gas expansion in body cavities / internal organs</header><span class="tooltiptext"><big><b>Gas expansion in body cavities / internal organs</b></big><br /><br /><b>Description of the hazard</b><br/>Expansion of the gases contained in the intestine, the air sacs and the internal ear due to a reduction of the atmospheric pressure in the environment.<br/><b>Percentage of birds exposed</b><br/>100%<br/><b>Duration (mm:ss) of exposure</b><br/>01:20</span></div>	  	</div>
+		<div class="outer-box"></div>
+		<div class="outer-box">
+		<div class="inner-box tooltip not-moved" draggable="true"><header class="no-pointer">Respiratory stimulant gas or gas mixture</header><span class="tooltiptext"><big><b>Respiratory stimulant gas or gas mixture</b></big><br /><br /><b>Description of the hazard</b><br/>Exposure to a gas or gas mixture that leads to increasing depth and rate of breathing.<br/><b>Percentage of birds exposed</b><br/>100%<br/><b>Duration (mm:ss) of exposure</b><br/>00:30</span></div><div class="inner-box tooltip not-moved" draggable="true"><header class="no-pointer">High stocking density</header><span class="tooltiptext"><big><b>High stocking density</b></big><br /><br /><b>Description of the hazard</b><br/>High stocking density reduces space allowance and increase the probability of collision between the neighbouring animals.<br/><b>Percentage of birds exposed</b><br/>100%<br/><b>Duration (mm:ss) of exposure</b><br/>01:00</span></div><div class="inner-box tooltip not-moved" draggable="true"><header class="no-pointer">Acidic gas or gas mixture</header><span class="tooltiptext"><big><b>Acidic gas or gas mixture</b></big><br /><br /><b>Description of the hazard</b><br/>Inhalation of an acidic gas or gas mixture.<br/><b>Percentage of birds exposed</b><br/>100%<br/><b>Duration (mm:ss) of exposure</b><br/>01:00</span></div><div class="inner-box tooltip not-moved" draggable="true"><header class="no-pointer">Neck cutting</header><span class="tooltiptext"><big><b>Neck cutting</b></big><br /><br /><b>Description of the hazard</b><br/>Cutting the neck of a conscious animal (severance of the tissues around the neck).<br/><b>Percentage of birds exposed</b><br/>5%<br/><b>Duration (mm:ss) of exposure</b><br/>00:01</span></div><div class="inner-box tooltip not-moved" draggable="true"><header class="no-pointer">Bleeding</header><span class="tooltiptext"><big><b>Bleeding</b></big><br /><br /><b>Description of the hazard</b><br/>Bleeding to death while recovering consciousness.<br/><b>Percentage of birds exposed</b><br/>5%<br/><b>Duration (mm:ss) of exposure</b><br/>00:15</span></div><div class="inner-box tooltip not-moved" draggable="true"><header class="no-pointer">Handling</header><span class="tooltiptext"><big><b>Handling</b></big><br /><br /><b>Description of the hazard</b><br/>Being caught by an operator by the legs and being held upside down.<br/><b>Percentage of birds exposed</b><br/>100%<br/><b>Duration (mm:ss) of exposure</b><br/>00:05</span></div>	  	</div>
+		<div class="outer-box"></div>
+	</div>
+</div>
+
+<br />
+<button class="button tooltip" onclick="submitForm();" disabled>Submit<span id="button-tooltip" class="tooltiptext">Not all items are handled yet!</span></button>
+<br />
+<script>
+var dragSrcEl = null;
+
+
+function enableSubmission() {
+
+	var allMoved = true;
+
+	outer = document.querySelectorAll('.outer-box');
+	for(i=0; i<outer.length; i++) {
+		if(outer[i].children.length > 0) {
+			children = outer[i].children;
+			for(j=0; j<children.length; j++) {
+				child = children[j]
+				if( child.classList.contains('not-moved') ) {
+					allMoved = false;
+				}
+			}
+		}
+	}
+	if(allMoved) {
+	    var button = document.querySelectorAll('.button');
+	    [].forEach.call(button, function(el){ el.disabled = false; });
+
+	    var tooltip = document.querySelectorAll('#button-tooltip');
+	    [].forEach.call(tooltip, function(el){ el.innerHTML = "Press to submit your ranking."; });
+	}
+}
+function disableSubmission() {
+    var button = document.querySelectorAll('.button');
+    [].forEach.call(button, function(el){ el.disabled = true; });
+
+    var tooltip = document.querySelectorAll('#button-tooltip');
+    [].forEach.call(tooltip, function(el){ el.innerHTML = "Not all items are handled yet!"; });
+}
+
+function handleDragStart(e) {
+  // Target (this) element is the source node.
+  dragSrcEl = this;
+
+  e.dataTransfer.effectAllowed = 'move';
+  e.dataTransfer.setData(textType, this.outerHTML);
+
+  this.classList.add('dragElem');
+}
+function handleDragOver(e) {
+  if (e.preventDefault) {
+    e.preventDefault(); // Necessary. Allows us to drop.
+  }
+  this.classList.add('over');
+
+  e.dataTransfer.dropEffect = 'move';  // See the section on the DataTransfer object.
+
+  return false;
+}
+
+function handleDragEnter(e) {
+  // this / e.target is the current hover target.
+}
+
+function handleDragLeave(e) {
+  this.classList.remove('over');  // this / e.target is previous target element.
+}
+
+function handleDrop(e) {
+  // this/e.target is current target element.
+
+  if (e.stopPropagation) {
+    e.stopPropagation(); // Stops some browsers from redirecting.
+  }
+
+  // Don't do anything if dropping the same column we're dragging.
+  if (dragSrcEl != this) {
+	var srcParent = dragSrcEl.parentNode;
+	var topParent = srcParent.parentNode;
+	emptyToAdjacent = ( srcParent.children.length == 1 && (srcParent.nextSibling == this || srcParent.previousSibling == this) )
+	if( ! emptyToAdjacent ) {
+		srcParent.removeChild(dragSrcEl);
+		if(srcParent.children.length == 0) {
+			index = 0;
+			for(i=0; i<topParent.children.length; i++) {
+				if(topParent.children[i] == srcParent) {
+					index = i;
+					break;
+				}
+			}
+			//index = Array.from(topParent.children).indexOf(srcParent)
+			for(i=1; i>=-1; i-=2) {
+				child = topParent.children[index+i];
+				if( child != this ) {
+					topParent.removeChild(child);
+				}
+			}
+		}
+		if(this.children.length == 0) {
+			this.insertAdjacentHTML('beforebegin', '<div class="outer-box"></div>');
+			var elem1 = this.previousSibling;
+			this.insertAdjacentHTML('afterend', '<div class="outer-box"></div>');
+			var elem2 = this.nextSibling;
+		    addDropHandlers(elem1);
+		    addDropHandlers(elem2);
+		}
+
+
+	    var dropHTML = e.dataTransfer.getData(textType);
+	    //this.insertAdjacentHTML('beforebegin',dropHTML);
+	    this.insertAdjacentHTML('beforeend', dropHTML);
+	    var dropElem = this.lastChild;
+	    addDragHandlers(dropElem);
+
+	    dropElem.classList.remove('not-moved');
+
+	    enableSubmission();
+	}
+
+
+  }
+  this.classList.remove('over');
+  return false;
+}
+
+
+function handleDragEnd(e) {
+  // this/e.target is the source node.
+  this.classList.remove('over');
+  this.classList.remove('dragElem');
+}
+
+function addDnDHandlers(elem) {
+  elem.addEventListener('dragstart', handleDragStart, false);
+  elem.addEventListener('dragenter', handleDragEnter, false);
+  elem.addEventListener('dragover', handleDragOver, false);
+  elem.addEventListener('dragleave', handleDragLeave, false);
+  elem.addEventListener('drop', handleDrop, false);
+  elem.addEventListener('dragend', handleDragEnd, false);
+}
+function addDragHandlers(elem) {
+	  elem.addEventListener('dragstart', handleDragStart, false);
+	  elem.addEventListener('dragend', handleDragEnd, false);
+}
+function addDropHandlers(elem) {
+	  elem.addEventListener('dragenter', handleDragEnter, false);
+	  elem.addEventListener('dragover', handleDragOver, false);
+	  elem.addEventListener('dragleave', handleDragLeave, false);
+	  elem.addEventListener('drop', handleDrop, false);
+}
+
+function submitForm() {
+	userId = "User";
+
+	outer = document.querySelectorAll('.outer-box');
+	content = "";
+	for(i=0; i<outer.length; i++) {
+		if(outer[i].children.length > 0) {
+			children = outer[i].children;
+			if(content.length > 0) {
+				content = content + ";";
+			}
+			for(j=0; j<children.length; j++) {
+				child = children[j]
+				content = content + child.firstChild.innerHTML;
+				if(j < children.length-1) {
+					content = content + ",";
+				}
+			}
+		}
+	}
+	var f = document.createElement('form');
+	f.action='./submit.php';
+	f.method='POST';
+
+	var val=document.createElement('input');
+	val.type='hidden';
+	val.name='value';
+	val.value=content;
+	f.appendChild(val);
+
+	var uid=document.createElement('input');
+	uid.type='hidden';
+	uid.name='id';
+	uid.value=userId;
+	f.appendChild(uid);
+
+	document.body.appendChild(f);
+	f.submit();
+}
+
+var textType = "text/html";
+if(isIE) {
+	textType = "text";
+}
+
+var inner = document.querySelectorAll('.inner-box');
+[].forEach.call(inner, addDragHandlers);
+var outer = document.querySelectorAll('.outer-box');
+[].forEach.call(outer, addDropHandlers);
+
+disableSubmission();
+
+</script>
+
+ </body>
 </html>
- 
